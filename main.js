@@ -22,12 +22,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     // add an eventlistener function which calls a function by name
-    document.getElementById("toTheFourth").addEventListener("click", function () {
-        let x = origArray.map(calcFourth);
-        document.getElementById("output1").value = x[0];
-        document.getElementById("output2").value = x[1];
-        document.getElementById("output3").value = x[2];
-    });
+    document.getElementById("toTheFourth").addEventListener("click", calcFourth);
 });
 
 // calculate the square
@@ -46,4 +41,14 @@ var calcCube = function (val) {
 // function declaration with a function name
 function calcFourth(val) {
     return val * val * val * val;
+}
+
+// Define the named function for the fourth button event listener
+function calcFourth() {
+  let x = origArray.map(function (num) {
+    return num ** 4;
+  });
+  document.getElementById("output1").value = x[0];
+  document.getElementById("output2").value = x[1];
+  document.getElementById("output3").value = x[2];
 }
