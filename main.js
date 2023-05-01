@@ -38,15 +38,10 @@ var calcCube = function (val) {
 }
 
 // calculate to the fourth
-// function declaration with a function name
-function calcFourth(val) {
-    return val * val * val * val;
-}
-
 // Define the named function for the fourth button event listener
 function calcFourth() {
-  let x = origArray.map(function (num) {
-    return num ** 4;
+  let x = origArray.map(function (val) {
+    return val * val * val * val;
   });
   document.getElementById("output1").value = x[0];
   document.getElementById("output2").value = x[1];
